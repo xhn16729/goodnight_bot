@@ -33,10 +33,10 @@ def greeting(message):
 			txt = "晚安"
 		send_name = str(message.from_user.first_name)
 		if message.reply_to_message == None:
-			txt = send_name + "向大家道" + txt + "～"
+			txt = send_name + " 向大家道" + txt + "～"
 		else:
 			reply_name = str(message.reply_to_message.from_user.first_name)
-			txt = send_name + "向" + reply_name + "道" + txt + "～ @" + message.reply_to_message.from_user.username
+			txt = send_name + " 向 " + reply_name + " 道" + txt + "～ @" + message.reply_to_message.from_user.username
 		bot.send_message(message.chat.id, txt)
 		bot.delete_message(message.chat.id, message.message_id)
 
